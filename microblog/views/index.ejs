@@ -1,11 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+    <title><%= title %>- Henry's blog</title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css'/>
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+    <link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">Henry's blog</a>
+
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="active"><a href="/">HomePage</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/reg">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="container" class="container">
+    <div class="hero-unit">
+        <h1>Welcome to Henry's blog</h1>
+
+        <p>Microblog is a blog system based on Node.js</p>
+
+        <p>
+            <a class="btn btn-primary btn-large" href="/login">Login</a>
+            <a class="btn btn-large" href="/reg">Login Now</a>
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="span4">
+            <h2>Carbo Speak</h2>
+
+            <p>东风破早梅</p>
+        </div>
+        <div class="span4">
+            <h2>Carbo Speak</h2>
+
+            <p>Every view controller in your app gets a trait collection object. This trait collection object has 2 size classes, a horizontal size class and a vertical size class. And each of these classes has 3 possible values: compact, regular, or any. These values can change based on the device and its orientation. Your app will layout its interface for each view controller based on the current size classes. Apple uses a grid to let the user choose which configuration to work in, so here's that same grid but with each device+orientation highlighted in its corresponding size class combo:</p>
+        </div>
+        <div class="span4">
+            <h2>Carbo Speak</h2>
+
+            <p>Android used to be notorious amongst iOS developers for its practically infinite permutations of interface size. Viewed from the iOS world, this used to look like a problem, because iOS didn’t really provide much in the way of support for building interfaces of different sizes.</p>
+        </div>
+    </div>
+<hr />
+
+    <footer>
+        <p><a href="http://www.github.com/hbwang85" target="_blank">Henry</a> @2015</p>
+    </footer>
+</div>
+</body>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.js"></script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

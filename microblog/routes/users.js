@@ -8,6 +8,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/:username', function(req, res) {
   res.send('user:' + req.params.username);
-})
+});
 
 module.exports = router;
