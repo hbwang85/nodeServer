@@ -10,6 +10,11 @@ var users = require('./routes/users');
 
 var app = express();
 
+/////////////////////////For express 4.0 and after/////////////////////////
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+/////////////////////////For express 4.0 and after/////////////////////////
+var settings = require('./settings');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -21,6 +26,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: settings.cookieSecret,
+  store: new MongoStore({
+  db: settings.db
+})
+}));
+
 
 app.use('/', routes);
 //app.use('/users', users);
