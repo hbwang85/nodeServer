@@ -54,7 +54,6 @@ router.post('/reg', function (req, res) {
 
         if (err) {
             req.flash('error', err);
-            console.log("=== "+err);
             return res.redirect('/reg');
         }
 

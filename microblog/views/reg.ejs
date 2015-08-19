@@ -33,6 +33,17 @@
     </div>
 </div>
 
+<% if (success) { %>
+<div class="alert alert-success">
+    <%= success%>
+</div>
+<% }%>
+<% if (error) {%>
+<div class="alert alert-error">
+    <%= error%>
+</div>
+<% } %>
+
 <div id="container" class="container">
     <form class="form-horizontal" method="post">
         <fieldset>
@@ -65,17 +76,6 @@
             </div>
         </fieldset>
     </form>
-
-    <% if (success) { %>
-    <div class="alert alert-success">
-        <%= success%>
-    </div>
-    <% }%>
-    <% if (error) {%>
-    <div class="alert alert-error">
-        <%= error%>
-    </div>
-    <% } %>
 
     <hr/>
 
