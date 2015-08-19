@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var flash = require('connect-flash');
 
 var app = express();
 
@@ -32,6 +33,21 @@ app.use(session({
   db: settings.db
 })
 }));
+
+app.use(flash());
+
+app.use(function(req, res, next){
+  res.locals.user = req.session.user;
+  res.locals.post = req.session.post;
+
+  var error = req.flash('error');
+  res.locals.error = error.length ? error : null;
+
+  var success = req.flash('success');
+  res.locals.success = success.length ? success : null;
+
+  next();
+});
 
 
 app.use('/', routes);
@@ -67,6 +83,31 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+//This is for Express before 4.x
+//app.dynamicHelpers({
+//  user: function(req, res){
+//    return req.session.user;
+//  },
+//
+//  error: function(req, res){
+//    var err = req.flash('error');
+//    if (err.length) {
+//      return err;
+//    } else {
+//      return null;
+//    }
+//  },
+//
+//  success: function(req, res) {
+//    var succ = req.flash('success');
+//    if (succ.length) {
+//      return succ;
+//    } else {
+//      return null;
+//    }
+//  },
+//});
 
 
 module.exports = app;

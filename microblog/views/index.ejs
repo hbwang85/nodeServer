@@ -25,8 +25,13 @@
             <div class="nav-collapse">
                 <ul class="nav">
                     <li class="active"><a href="/">HomePage</a></li>
+                    <% if (!user) { %>
                     <li><a href="/login">Login</a></li>
                     <li><a href="/reg">Register</a></li>
+                    <%} else { %>
+                    <li><a href="/logout">Logout</a></li>
+                    <% } %>
+
                 </ul>
             </div>
         </div>
@@ -44,6 +49,18 @@
             <a class="btn btn-large" href="/reg">Register Now</a>
         </p>
     </div>
+
+    <% if (success) { %>
+    <div class="alert alert-success">
+        <%= success%>
+        </div>
+    <% }%>
+    <% if (error) {%>
+    <div class="alert alert-error">
+        <%= error%>
+    </div>
+    <% } %>
+
 
     <div class="row">
         <div class="span4">
